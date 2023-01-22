@@ -1,38 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+    margin: 5em auto;
+    width: 70%;
+    max-width: 900px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Upper {
+    min-height: 212px;
+    margin-bottom: 3em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dimension-choice {
+    margin: 3em 0;
+    display: flex;
+    justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dimension-choice button {
+    /* width: 70px; */
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+
+    transition: all 0.5s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.dimension-choice button:hover {
+    color: #b80707;
+    border: 2px solid #b80707;
+}
+.dimension-choice button.active {
+    color: red;
+    border: 2px solid red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dimension-choice button:disabled {
+    pointer-events: none;
+}
+
+.custom-choice {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.custom-choice p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.custom-choice input {
+    padding: 0.4em;
+    font-size: 0.75rem;
+}
+
+.row {
+    display: flex;
+}
+
+.numBox {
+    width: 50px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 10px; */
+    border: 1px solid black;
 }

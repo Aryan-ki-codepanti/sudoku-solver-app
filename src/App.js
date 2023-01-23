@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { copyArray, zeroArray } from "./Utils/ArrayUtil";
 
 function App() {
     const [dimension, setDimension] = useState("");
@@ -16,13 +17,17 @@ function App() {
             console.log("here 2");
             return;
         }
-        const newArr = [];
-        const n = dimension * dimension;
-        for (let i = 0; i < n; i++) {
-            let inner = [];
-            for (let j = 0; j < n; j++) inner.push(0);
-            newArr.push(inner);
-        }
+        const newArr = zeroArray(dimension);
+        setGrid(prev => newArr);
+    };
+
+    const handleInputNumBoxPuzzle = e => {
+        let val = e.target.value;
+        if (val.length > 1) return;
+
+        const [i, j] = e.target.id.split("-");
+        const newArr = copyArray(grid);
+        newArr[i][j] = val;
         setGrid(prev => newArr);
     };
 
@@ -71,10 +76,15 @@ function App() {
                 <button onClick={handleGeneration}>Generate Puzzle</button>
                 {grid && (
                     <div className="sudoku-box">
-                        {grid.map(x => (
+                        {grid.map((x, i) => (
                             <div className="row">
-                                {x.map(y => (
-                                    <div className="numBox">{y}</div>
+                                {x.map((y, j) => (
+                                    <input
+                                        id={`${i}-${j}`}
+                                        className="numBox"
+                                        value={grid[i][j]}
+                                        onChange={handleInputNumBoxPuzzle}
+                                    />
                                 ))}
                             </div>
                         ))}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import { copyArray, zeroArray } from "./Utils/ArrayUtil";
+import { copyArray, toIntegers, zeroArray } from "./Utils/ArrayUtil";
+import { solve } from "./Utils/solver";
 
 function App() {
     const [dimension, setDimension] = useState("");
@@ -32,7 +33,12 @@ function App() {
         setGrid(prev => newArr);
     };
 
-    const handleSolve = e => {};
+    const handleSolve = e => {
+        const n = dimension * dimension;
+        const numGrid = toIntegers(grid, dimension, n);
+        const result = solve(numGrid, dimension, n);
+        setResultGrid(prev => result);
+    };
 
     return (
         <div className="App">
@@ -103,9 +109,9 @@ function App() {
                     </button>
 
                     {resultGrid && (
-                        <div className="sudoku-box">
+                        <div className="sudoku-result-box">
                             {resultGrid.map((x, i) => (
-                                <div className="row">
+                                <div className="result-row">
                                     {x.map((y, j) => (
                                         <div className="numBoxResult">
                                             {resultGrid[i][j]}

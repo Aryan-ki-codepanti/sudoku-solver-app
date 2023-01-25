@@ -11,7 +11,7 @@ const isValid = (arr, row, col, dimension, n, val) => {
     const col_start = dimension * Math.floor(col / dimension);
     const col_end = dimension * (Math.floor(col / dimension) + 1) - 1;
 
-    console.log({ row_start, row_end, col_start, col_end });
+    // console.log({ row_start, row_end, col_start, col_end });
 
     for (let i = row_start; i <= row_end; i++)
         for (let j = col_start; j <= col_end; j++)
@@ -39,7 +39,17 @@ const solveRecursive = (arr, row, col, dimension, n) => {
 };
 
 export const solve = (arr, dimension, n) => {
+    // const solve = (arr, dimension, n) => {
+    // const newArr = [...arr];
     const newArr = copyArray(arr);
     const res = solveRecursive(newArr, 0, 0, dimension, n) ? newArr : false;
     return res;
 };
+
+// const arr = [
+//     [1, 0, 0, 4],
+//     [3, 0, 0, 2],
+//     [0, 1, 4, 0],
+//     [0, 3, 0, 1]
+// ];
+// console.log(solve(arr, 2, 4));

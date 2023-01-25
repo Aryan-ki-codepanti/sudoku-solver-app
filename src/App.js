@@ -10,16 +10,18 @@ function App() {
     const [resultGrid, setResultGrid] = useState(null);
 
     const handleGeneration = e => {
+        let dim = dimension;
         if (customChoice !== "") {
-            console.log("here 1");
+            console.log("here 1 , custom choice  set", customChoice);
             setDimension(prev => customChoice);
+            dim = customChoice;
         }
 
-        if (dimension === "") {
-            console.log("here 2");
+        if (dim === "") {
+            console.log("here 2 , dimension not set");
             return;
         }
-        const newArr = zeroArray(dimension);
+        const newArr = zeroArray(dim);
         setGrid(prev => newArr);
     };
 

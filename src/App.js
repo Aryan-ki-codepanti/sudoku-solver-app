@@ -6,6 +6,7 @@ function App() {
     const [dimension, setDimension] = useState("");
     const [customChoice, setCustomChoice] = useState("");
     const [grid, setGrid] = useState(null);
+    const [resultGrid, setResultGrid] = useState(null);
 
     const handleGeneration = e => {
         if (customChoice !== "") {
@@ -30,6 +31,8 @@ function App() {
         newArr[i][j] = val;
         setGrid(prev => newArr);
     };
+
+    const handleSolve = e => {};
 
     return (
         <div className="App">
@@ -73,23 +76,46 @@ function App() {
             </div>
 
             <div className="Lower">
-                <button onClick={handleGeneration}>Generate Puzzle</button>
-                {grid && (
-                    <div className="sudoku-box">
-                        {grid.map((x, i) => (
-                            <div className="row">
-                                {x.map((y, j) => (
-                                    <input
-                                        id={`${i}-${j}`}
-                                        className="numBox"
-                                        value={grid[i][j]}
-                                        onChange={handleInputNumBoxPuzzle}
-                                    />
-                                ))}
-                            </div>
-                        ))}
-                    </div>
-                )}
+                <div className="input-grid">
+                    <button className="generate-btn" onClick={handleGeneration}>
+                        Generate Puzzle
+                    </button>
+                    {grid && (
+                        <div className="sudoku-box">
+                            {grid.map((x, i) => (
+                                <div className="row">
+                                    {x.map((y, j) => (
+                                        <input
+                                            id={`${i}-${j}`}
+                                            className="numBox"
+                                            value={grid[i][j]}
+                                            onChange={handleInputNumBoxPuzzle}
+                                        />
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+                <div className="result-grid">
+                    <button className="solve-btn" onClick={handleSolve}>
+                        Solve
+                    </button>
+
+                    {resultGrid && (
+                        <div className="sudoku-box">
+                            {resultGrid.map((x, i) => (
+                                <div className="row">
+                                    {x.map((y, j) => (
+                                        <div className="numBoxResult">
+                                            {resultGrid[i][j]}
+                                        </div>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );

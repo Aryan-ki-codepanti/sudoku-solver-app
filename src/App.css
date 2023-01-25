@@ -1,7 +1,15 @@
+/* Google font Inter */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root {
+    --Primary-blue: #307df6;
 }
 
 .App {
@@ -66,10 +74,32 @@
 
 .numBox {
     width: 50px;
+    padding: 20px;
     aspect-ratio: 1;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     /* padding: 10px; */
     border: 1px solid black;
+}
+
+.generate-btn,
+.solve-btn {
+    padding: 0.5em 2em;
+    border-radius: 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.generate-btn {
+    background: var(--Primary-blue);
+    color: #fff;
+    border: none;
+}
+
+.solve-btn {
+    color: var(--Primary-blue);
+    background: #fff;
+    border: 2px solid var(--Primary-blue);
 }

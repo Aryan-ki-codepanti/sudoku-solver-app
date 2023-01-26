@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Upper from "./Components/Upper";
 import { copyArray, toIntegers, zeroArray } from "./Utils/ArrayUtil";
 import { solve } from "./Utils/solver";
 
@@ -44,44 +45,7 @@ function App() {
 
     return (
         <div className="App">
-            <div className="Upper">
-                <h1>Choose a dimension</h1>
-                <div className="dimension-choice">
-                    <button
-                        disabled={grid !== null}
-                        className={dimension === 2 ? "active" : ""}
-                        onClick={e => setDimension(prev => 2)}
-                    >
-                        2
-                    </button>
-                    <button
-                        disabled={grid !== null}
-                        className={dimension === 3 ? "active" : ""}
-                        onClick={e => setDimension(prev => 3)}
-                    >
-                        3
-                    </button>
-                    <button
-                        disabled={grid !== null}
-                        className={dimension === "Custom" ? "active" : ""}
-                        onClick={e => setDimension(prev => "Custom")}
-                    >
-                        Custom
-                    </button>
-                </div>
-                {dimension === "Custom" && (
-                    <div className="custom-choice">
-                        <p>Enter the choice</p>
-                        <input
-                            value={customChoice}
-                            type="number"
-                            onChange={e =>
-                                setCustomChoice(prev => e.target.valueAsNumber)
-                            }
-                        />
-                    </div>
-                )}
-            </div>
+            <Upper />
 
             <div className="Lower">
                 <div className="input-grid">

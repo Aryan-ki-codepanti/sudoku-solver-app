@@ -1,0 +1,49 @@
+.Upper {
+    min-height: 212px;
+    margin-bottom: 3em;
+}
+
+.dimension-choice {
+    margin: 3em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dimension-choice button {
+    /* width: 70px; */
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.dimension-choice button:hover {
+    color: #b80707;
+    border: 2px solid #b80707;
+}
+.dimension-choice button.active {
+    color: red;
+    border: 2px solid red;
+}
+
+.dimension-choice button:disabled {
+    pointer-events: none;
+}
+
+.custom-choice {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.custom-choice p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.custom-choice input {
+    padding: 0.4em;
+    font-size: 0.75rem;
+}

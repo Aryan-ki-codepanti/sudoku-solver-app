@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import "./upper.css";
+import "./dimensionChoice.css";
 import { GridContext } from "../../Context/GridContext";
 
-const Upper = () => {
+const DimensionChoice = () => {
     const { grid, dimension, setDimension, customChoice, setCustomChoice } =
         useContext(GridContext);
     return (
-        <div className="Upper">
+        <div className="DimensionChoice">
             <h1>Choose a dimension</h1>
             <div className="dimension-choice">
                 <button
@@ -47,4 +47,4 @@ const Upper = () => {
     );
 };
 
-export default Upper;
+export default DimensionChoice;

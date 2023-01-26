@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Upper from "./Components/Upper";
+import DimensionChoice from "./Components/DimensionChoice";
 import { copyArray, toIntegers, zeroArray } from "./Utils/ArrayUtil";
 import { solve } from "./Utils/solver";
 
@@ -45,7 +45,7 @@ function App() {
 
     return (
         <div className="App">
-            <Upper />
+            <DimensionChoice />
 
             <div className="Lower">
                 <div className="input-grid">

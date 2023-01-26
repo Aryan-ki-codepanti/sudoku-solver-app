@@ -1,0 +1,20 @@
+.generate-btn {
+    background: var(--Primary-blue);
+    color: #fff;
+    border: none;
+}
+
+.row {
+    display: flex;
+}
+
+.numBox {
+    width: 50px;
+    padding: 20px;
+    aspect-ratio: 1;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    /* padding: 10px; */
+    border: 1px solid black;
+}

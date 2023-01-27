@@ -7,6 +7,7 @@ export const GridWrapper = ({ children }) => {
     const [customChoice, setCustomChoice] = useState("");
     const [grid, setGrid] = useState(null);
     const [resultGrid, setResultGrid] = useState(null);
+    const [solverIterations, setSolverIterations] = useState(null);
 
     const data = {
         dimension,
@@ -16,7 +17,9 @@ export const GridWrapper = ({ children }) => {
         grid,
         setGrid,
         resultGrid,
-        setResultGrid
+        setResultGrid,
+        solverIterations,
+        setSolverIterations
     };
     return <GridContext.Provider value={data}>{children}</GridContext.Provider>;
 };

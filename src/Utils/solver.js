@@ -20,7 +20,7 @@ const isValid = (arr, row, col, dimension, n, val) => {
     return true;
 };
 
-export const solve = (arr, dimension, n) => {
+export const solve = (arr, dimension, n, setSolverIterations) => {
     // const solve = (arr, dimension, n) => {
     // const newArr = [...arr];
 
@@ -53,6 +53,7 @@ export const solve = (arr, dimension, n) => {
 
     const newArr = copyArray(arr);
     const res = solveRecursive(newArr, 0, 0) ? newArr : false;
+    setSolverIterations(prev => iterations);
     return res;
 };
 

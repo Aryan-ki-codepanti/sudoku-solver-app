@@ -5,13 +5,13 @@ import { solve } from "../../Utils/solver";
 import "./resultGrid.css";
 
 const ResultGrid = () => {
-    const { grid, dimension, resultGrid, setResultGrid } =
+    const { grid, dimension, resultGrid, setResultGrid, setSolverIterations } =
         useContext(GridContext);
 
     const handleSolve = e => {
         const n = dimension * dimension;
         const numGrid = toIntegers(grid, dimension, n);
-        const result = solve(numGrid, dimension, n);
+        const result = solve(numGrid, dimension, n, setSolverIterations);
         setResultGrid(prev => result);
     };
 

@@ -1,0 +1,19 @@
+.Header {
+    background: var(--Primary-blue);
+    /* height: 10vh; */
+    /* min-height: 150px; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.Header .container {
+    display: flex;
+    justify-content: center;
+}
+
+.Header h1 {
+    padding-top: 100px;
+    font-size: 4rem;
+    font-weight: 400;
+    color: #fff;
+}

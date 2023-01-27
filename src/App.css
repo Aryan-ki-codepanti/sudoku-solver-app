@@ -10,10 +10,15 @@
 
 :root {
     --Primary-blue: #307df6;
+    --Primaru-color: #4e596b;
 }
+/* 
+.Not-Header {
+    transform: translateY(-50%);
+} */
 
-.App {
-    margin: 5em auto;
+.container {
+    margin: auto;
     width: 70%;
     max-width: 900px;
 }

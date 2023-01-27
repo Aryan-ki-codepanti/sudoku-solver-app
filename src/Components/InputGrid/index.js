@@ -34,7 +34,7 @@ const InputGrid = () => {
     };
 
     return (
-        <div className="input-grid">
+        <div className="input-grid container">
             <button className="generate-btn" onClick={handleGeneration}>
                 Generate Puzzle
             </button>

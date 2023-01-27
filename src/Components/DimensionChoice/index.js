@@ -6,7 +6,7 @@ const DimensionChoice = () => {
     const { grid, dimension, setDimension, customChoice, setCustomChoice } =
         useContext(GridContext);
     return (
-        <div className="DimensionChoice">
+        <div className="DimensionChoice container">
             <h1>Choose a dimension</h1>
             <div className="dimension-choice">
                 <button

@@ -16,7 +16,7 @@ const ResultGrid = () => {
     };
 
     return (
-        <div className="result-grid">
+        <div className="result-grid container">
             <button className="solve-btn" onClick={handleSolve}>
                 Solve
             </button>

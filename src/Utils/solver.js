@@ -20,29 +20,39 @@ const isValid = (arr, row, col, dimension, n, val) => {
     return true;
 };
 
-const solveRecursive = (arr, row, col, dimension, n) => {
-    if (row === n) return true;
-    if (col === n) return solveRecursive(arr, row + 1, 0, dimension, n);
-    if (arr[row][col] !== 0)
-        return solveRecursive(arr, row, col + 1, dimension, n);
-
-    //tryin
-    for (let i = 1; i <= n; i++) {
-        if (isValid(arr, row, col, dimension, n, i)) {
-            arr[row][col] = i;
-            if (solveRecursive(arr, row, col + 1, dimension, n)) return true;
-            arr[row][col] = 0;
-        }
-    }
-
-    return false;
-};
-
 export const solve = (arr, dimension, n) => {
     // const solve = (arr, dimension, n) => {
     // const newArr = [...arr];
+
+    const iterations = [];
+
+    const solveRecursive = (myArr, row, col) => {
+        let copyMyArr = copyArray(myArr);
+
+        if (row === n) return true;
+        if (col === n) return solveRecursive(myArr, row + 1, 0, dimension, n);
+        if (myArr[row][col] !== 0)
+            return solveRecursive(myArr, row, col + 1, dimension, n);
+
+        //tryin
+        for (let i = 1; i <= n; i++) {
+            if (isValid(myArr, row, col, dimension, n, i)) {
+                myArr[row][col] = i;
+                copyMyArr[row][col] = i;
+                iterations.push(copyMyArr);
+                if (solveRecursive(myArr, row, col + 1, dimension, n))
+                    return true;
+                myArr[row][col] = 0;
+                copyMyArr[row][col] = 0;
+                iterations.push(copyMyArr);
+            }
+        }
+
+        return false;
+    };
+
     const newArr = copyArray(arr);
-    const res = solveRecursive(newArr, 0, 0, dimension, n) ? newArr : false;
+    const res = solveRecursive(newArr, 0, 0) ? newArr : false;
     return res;
 };
 

@@ -1,4 +1,7 @@
-export const copyArray = arr => [...arr];
+// wrong ... does the task for only 1 level still inner ones will be by reference so
+// export const copyArray = arr => [...arr];
+
+export const copyArray = arr => arr.map(x => [...x]);
 
 export const toIntegers = (arr, dimension, n) => {
     const newArr = [];

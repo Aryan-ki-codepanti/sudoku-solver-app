@@ -41,9 +41,10 @@ const InputGrid = () => {
             {grid && (
                 <div className="sudoku-box">
                     {grid.map((x, i) => (
-                        <div className="row">
+                        <div key={`myInputRow-${i}`} className="row">
                             {x.map((y, j) => (
                                 <input
+                                    key={`myInputbox-${i}-${j}`}
                                     id={`${i}-${j}`}
                                     className="numBox"
                                     value={grid[i][j]}

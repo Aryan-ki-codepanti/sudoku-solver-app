@@ -24,9 +24,12 @@ const ResultGrid = () => {
             {resultGrid && (
                 <div className="sudoku-result-box">
                     {resultGrid.map((x, i) => (
-                        <div className="result-row">
+                        <div key={`myResultRow-${i}`} className="result-row">
                             {x.map((y, j) => (
-                                <div className="numBoxResult">
+                                <div
+                                    key={`myResultbox-${i}-${j}`}
+                                    className="numBoxResult"
+                                >
                                     {resultGrid[i][j]}
                                 </div>
                             ))}

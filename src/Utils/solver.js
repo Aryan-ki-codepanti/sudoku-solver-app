@@ -52,4 +52,12 @@ export const solve = (arr, dimension, n) => {
 //     [0, 1, 4, 0],
 //     [0, 3, 0, 1]
 // ];
+
+// const arr2 = [
+//     [0, 0, 0, 3],
+//     [0, 0, 0, 2],
+//     [3, 0, 0, 0],
+//     [4, 0, 0, 0]
+// ];
+
 // console.log(solve(arr, 2, 4));

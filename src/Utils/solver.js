@@ -1,24 +1,4 @@
-import { copyArray } from "./ArrayUtil";
-
-const isValid = (arr, row, col, dimension, n, val) => {
-    // presence in Row
-    for (let i = 0; i < n; i++) if (arr[row][i] === val) return false;
-    // presence in Column
-    for (let i = 0; i < n; i++) if (arr[i][col] === val) return false;
-
-    const row_start = dimension * Math.floor(row / dimension);
-    const row_end = dimension * (Math.floor(row / dimension) + 1) - 1;
-    const col_start = dimension * Math.floor(col / dimension);
-    const col_end = dimension * (Math.floor(col / dimension) + 1) - 1;
-
-    // console.log({ row_start, row_end, col_start, col_end });
-
-    for (let i = row_start; i <= row_end; i++)
-        for (let j = col_start; j <= col_end; j++)
-            if (arr[i][j] === val) return false;
-
-    return true;
-};
+import { copyArray, isValid } from "./ArrayUtil";
 
 export const solve = (arr, dimension, n, setSolverIterations) => {
     // const solve = (arr, dimension, n) => {

@@ -3,21 +3,3 @@
     background: #fff;
     border: 2px solid var(--Primary-blue);
 }
-
-.result-row {
-    display: flex;
-    gap: 3px;
-    margin-bottom: 3px;
-}
-
-.numBoxResult {
-    width: 50px;
-    padding: 20px;
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1em;
-    border: 1px solid green;
-    user-select: none;
-}

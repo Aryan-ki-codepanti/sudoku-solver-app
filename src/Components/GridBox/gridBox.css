@@ -1,0 +1,22 @@
+.sudoku-result-box {
+    border: 4px solid var(--Secondary-gray);
+}
+
+.result-row {
+    display: flex;
+    /* gap: 3px; */
+    /* margin-bottom: 3px; */
+}
+
+.numBoxResult {
+    width: var(--NumBox);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--Primary-blue);
+    /* border: solid var(--Secondary-white);
+    border-width: 2px 0 0 2px; */
+    user-select: none;
+}

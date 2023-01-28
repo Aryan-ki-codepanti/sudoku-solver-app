@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { GridContext } from "../../Context/GridContext";
 import { isValidPuzzle, toIntegers } from "../../Utils/ArrayUtil";
 import { solve } from "../../Utils/solver";
+import GridBox from "../GridBox";
 import "./resultGrid.css";
 
 const ResultGrid = () => {
@@ -38,22 +39,7 @@ const ResultGrid = () => {
 
             {error && <p>You entered a puzzle which can not be solved</p>}
 
-            {resultGrid && (
-                <div className="sudoku-result-box">
-                    {resultGrid.map((x, i) => (
-                        <div key={`myResultRow-${i}`} className="result-row">
-                            {x.map((y, j) => (
-                                <div
-                                    key={`myResultbox-${i}-${j}`}
-                                    className="numBoxResult"
-                                >
-                                    {resultGrid[i][j]}
-                                </div>
-                            ))}
-                        </div>
-                    ))}
-                </div>
-            )}
+            <GridBox currentGrid={resultGrid} />
         </div>
     );
 };

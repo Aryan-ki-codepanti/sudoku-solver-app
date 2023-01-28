@@ -1,7 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import GridContext from "../../Context/GridContext";
 
 const Transition = () => {
     const [counter, setCounter] = useState(1);
+    const { iterations } = useContext(GridContext);
 
     const intervalRef = useRef(null);
 

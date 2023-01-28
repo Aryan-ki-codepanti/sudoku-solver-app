@@ -8,7 +8,7 @@ const ResultGrid = () => {
     const { grid, dimension, resultGrid, setResultGrid, setSolverIterations } =
         useContext(GridContext);
 
-    const [error, setError] = useState(null);
+    const [error, setError] = useState(false);
 
     const handleSolve = e => {
         const n = dimension * dimension;
@@ -16,14 +16,17 @@ const ResultGrid = () => {
 
         if (!isValidPuzzle(numGrid, dimension, n)) {
             setError(prev => true);
+            setResultGrid(prev => null);
             return;
         }
 
         const result = solve(numGrid, dimension, n, setSolverIterations);
         if (!result) {
             setError(prev => true);
+            setResultGrid(prev => null);
             return;
         }
+        setError(prev => false);
         setResultGrid(prev => result);
     };
 

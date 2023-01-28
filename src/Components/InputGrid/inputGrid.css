@@ -1,3 +1,6 @@
+.sudoku-box {
+    /* border: 4px solid var(--Secondary-gray); */
+}
 .generate-btn {
     background: var(--Primary-blue);
     color: #fff;
@@ -6,15 +9,21 @@
 
 .row {
     display: flex;
+    border-right: 4px solid red;
 }
 
 .numBox {
-    width: 50px;
-    padding: 20px;
+    width: var(--InputNumBox);
     aspect-ratio: 1;
-    /* display: flex; */
-    align-items: center;
-    justify-content: center;
-    /* padding: 10px; */
-    border: 1px solid black;
+    flex: 1;
+
+    font-size: 1.5rem;
+    color: var(--Primary-blue);
+    text-align: center;
+
+    border: none;
+}
+
+.numBox:focus {
+    outline: none;
 }

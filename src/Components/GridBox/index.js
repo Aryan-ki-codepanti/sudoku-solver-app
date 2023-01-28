@@ -1,27 +1,10 @@
 import React, { useContext } from "react";
 import "./gridBox.css";
 import { GridContext } from "../../Context/GridContext";
-import { COLORS, WIDTHS } from "../../Constants";
+import { getStyles, WIDTHS } from "../../Utils/Styles";
 
 const GridBox = ({ currentGrid }) => {
     const { dimension } = useContext(GridContext);
-
-    const getStyles = (i, j) => {
-        const styles = {
-            borderTop: `2px solid ${COLORS["--Secondary-white"]}`,
-            borderLeft: `2px solid ${COLORS["--Secondary-white"]}`
-        };
-
-        if (!(j % dimension)) styles.borderLeft = "none";
-        if (!(i % dimension)) styles.borderTop = "none";
-
-        if (!((j + 1) % dimension) && j + 1 !== currentGrid.length)
-            styles.borderRight = `4px solid ${COLORS["--Secondary-gray"]}`;
-
-        if (!((i + 1) % dimension) && i + 1 !== currentGrid.length)
-            styles.borderBottom = `4px solid ${COLORS["--Secondary-gray"]}`;
-        return styles;
-    };
 
     return (
         <div>
@@ -38,7 +21,12 @@ const GridBox = ({ currentGrid }) => {
                                 <div
                                     key={`grid-${i}-${j}`}
                                     className="numBoxResult"
-                                    style={getStyles(i, j)}
+                                    style={getStyles(
+                                        dimension,
+                                        dimension * dimension,
+                                        i,
+                                        j
+                                    )}
                                 >
                                     {currentGrid[i][j]}
                                 </div>

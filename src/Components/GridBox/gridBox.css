@@ -11,12 +11,15 @@
 .numBoxResult {
     width: var(--NumBox);
     aspect-ratio: 1;
+    /* border: solid var(--Secondary-white);
+    border-width: 2px 0 0 2px; */
+
+    font-size: 1.5rem;
+    color: var(--Primary-blue);
+
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    color: var(--Primary-blue);
-    /* border: solid var(--Secondary-white);
-    border-width: 2px 0 0 2px; */
+
     user-select: none;
 }

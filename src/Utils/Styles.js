@@ -24,5 +24,11 @@ export const getStyles = (dimension, n, i, j) => {
 
     if (!((i + 1) % dimension) && i + 1 !== n)
         styles.borderBottom = `4px solid ${COLORS["--Secondary-gray"]}`;
+
+    if (i === 0 && j === 0) styles.borderRadius = "8px 0 0 0";
+    if (i === 0 && j + 1 === dimension) styles.borderRadius = "0 8px 0 0";
+    if (i + 1 === dimension && j + 1 === dimension)
+        styles.borderRadius = "0 0 8px 0";
+    if (i + 1 === dimension && j === 0) styles.borderRadius = "0 0 0 8px";
     return styles;
 };

@@ -23,9 +23,12 @@
     background: transparent;
     color: var(--Primary-blue);
     border: 2px solid var(--Primary-blue);
-    transition: all 0.05s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
+.dimension-choice button:hover {
+    outline: 2px solid var(--Secondary-blue);
+}
 .dimension-choice button:hover,
 .dimension-choice button.active {
     color: #fff;

@@ -7,7 +7,7 @@ const GridBox = ({ currentGrid }) => {
     const { dimension } = useContext(GridContext);
 
     return (
-        <div>
+        <div className="grid-box-wrapper">
             {currentGrid && (
                 <div
                     className="sudoku-result-box"

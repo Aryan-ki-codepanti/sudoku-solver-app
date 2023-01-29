@@ -43,6 +43,12 @@ const InputGrid = () => {
         if (i + 1 === grid.length)
             styles.borderBottom = `4px solid ${COLORS["--Secondary-gray"]}`;
 
+        if (i === 0 && j === 0) styles.borderRadius = "8px 0 0 0";
+        if (i === 0 && j + 1 === grid.length) styles.borderRadius = "0 8px 0 0";
+        if (i + 1 === grid.length && j + 1 === grid.length)
+            styles.borderRadius = "0 0 8px 0";
+        if (i + 1 === grid.length && j === 0) styles.borderRadius = "0 0 0 8px";
+        console.log({ styles, i, j });
         return styles;
     };
 

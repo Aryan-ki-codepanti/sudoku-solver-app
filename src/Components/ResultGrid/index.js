@@ -39,8 +39,10 @@ const ResultGrid = () => {
                 </button>
             )}
             {error && <p>You entered a puzzle which can not be solved</p>}
-
-            <GridBox currentGrid={resultGrid} />
+            <div>
+                {resultGrid && <p>Here is the solution of entered puzzle</p>}
+                <GridBox currentGrid={resultGrid} />
+            </div>
         </div>
     );
 };

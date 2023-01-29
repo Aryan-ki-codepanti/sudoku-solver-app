@@ -9,6 +9,7 @@
 }
 
 .input-grid-wrapper {
+    margin-top: 1em;
     gap: 0.4em;
 }
 .input-grid-wrapper p {
@@ -16,12 +17,12 @@
 }
 
 .sudoku-box {
+    border-radius: 8px;
     filter: drop-shadow(0px 8px 16px rgba(5, 74, 183, 0.2));
 }
 
 .row {
     display: flex;
-    border-right: 4px solid red;
 }
 
 .numBox {

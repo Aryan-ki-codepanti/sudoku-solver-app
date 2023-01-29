@@ -3,7 +3,8 @@
     /* height: 10vh; */
     /* min-height: 150px; */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .Header .container {
@@ -16,4 +17,59 @@
     font-size: 4rem;
     font-weight: 400;
     color: #fff;
+}
+
+.box {
+    background: #fff;
+    width: 2.5em;
+    aspect-ratio: 1;
+    border-radius: 4px;
+}
+
+.opacity-30 {
+    opacity: 30%;
+}
+
+.opacity-10 {
+    opacity: 10%;
+}
+
+.opacity-5 {
+    opacity: 5%;
+}
+
+.header-left,
+.header-right {
+    display: grid;
+    gap: 0.6em;
+}
+
+.header-left {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.header-left .last {
+    grid-column: 1 / 2;
+}
+
+.header-right {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.header-right .last-a {
+    grid-column: 3 / 4;
+}
+.header-right .last-b {
+    grid-column: 4 / 5;
+}
+
+.header-right div:nth-child(5) {
+    grid-column: 2 / 3;
+}
+.header-right div:nth-child(6) {
+    grid-column: 3 / 4;
+}
+.header-right div:nth-child(7) {
+    grid-column: 4 / 5;
 }

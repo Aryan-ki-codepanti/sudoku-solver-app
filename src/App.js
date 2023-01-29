@@ -4,10 +4,11 @@ import DimensionChoice from "./Components/DimensionChoice";
 import Header from "./Components/Header";
 import InputGrid from "./Components/InputGrid";
 import ResultGrid from "./Components/ResultGrid";
+import Transition from "./Components/Transition";
 import { GridContext } from "./Context/GridContext";
 
 function App() {
-    const { grid } = useContext(GridContext);
+    const { grid, resultGrid } = useContext(GridContext);
 
     return (
         <div className="App">
@@ -17,6 +18,7 @@ function App() {
                 <div className="Lower">
                     {grid && <InputGrid />}
                     <ResultGrid />
+                    {/* {resultGrid && <Transition />} */}
                 </div>
             </div>
         </div>

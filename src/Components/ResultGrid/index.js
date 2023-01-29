@@ -33,7 +33,7 @@ const ResultGrid = () => {
 
     return (
         <div className="result-grid container">
-            {grid && (
+            {grid && !resultGrid && (
                 <button className="solve-btn" onClick={handleSolve}>
                     Solve
                 </button>

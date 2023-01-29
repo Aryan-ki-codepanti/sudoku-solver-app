@@ -5,24 +5,7 @@ import "./inputGrid.css";
 import { COLORS, WIDTHS } from "../../Utils/Styles";
 
 const InputGrid = () => {
-    const { grid, dimension, setDimension, customChoice, setGrid } =
-        useContext(GridContext);
-
-    const handleGeneration = e => {
-        let dim = dimension;
-        if (customChoice !== "") {
-            console.log("here 1 , custom choice  set", customChoice);
-            setDimension(prev => customChoice);
-            dim = customChoice;
-        }
-
-        if (dim === "") {
-            console.log("here 2 , dimension not set");
-            return;
-        }
-        const newArr = zeroArray(dim);
-        setGrid(prev => newArr);
-    };
+    const { grid, dimension, setGrid } = useContext(GridContext);
 
     const handleInputNumBoxPuzzle = e => {
         let val = e.target.value;
@@ -64,33 +47,32 @@ const InputGrid = () => {
     };
 
     return (
-        <div className="input-grid container">
-            <button className="generate-btn" onClick={handleGeneration}>
-                Generate Puzzle
-            </button>
-            {grid && (
-                <div
-                    className="sudoku-box"
-                    style={{
-                        width: `${grid.length * WIDTHS["--InputNumBox"]}px`
-                    }}
-                >
-                    {grid.map((x, i) => (
-                        <div key={`myInputRow-${i}`} className="row">
-                            {x.map((y, j) => (
-                                <input
-                                    key={`myInputbox-${i}-${j}`}
-                                    id={`${i}-${j}`}
-                                    style={getStyles(i, j)}
-                                    className="numBox"
-                                    value={grid[i][j]}
-                                    onChange={handleInputNumBoxPuzzle}
-                                />
-                            ))}
-                        </div>
-                    ))}
-                </div>
-            )}
+        <div className="input-grid-wrapper container">
+            <p>
+                To place a number in a square — type the number on your keyboard
+                after clicking on it
+            </p>
+            <div
+                className="sudoku-box"
+                style={{
+                    width: `${grid.length * WIDTHS["--InputNumBox"]}px`
+                }}
+            >
+                {grid.map((x, i) => (
+                    <div key={`myInputRow-${i}`} className="row">
+                        {x.map((y, j) => (
+                            <input
+                                key={`myInputbox-${i}-${j}`}
+                                id={`${i}-${j}`}
+                                style={getStyles(i, j)}
+                                className="numBox"
+                                value={grid[i][j]}
+                                onChange={handleInputNumBoxPuzzle}
+                            />
+                        ))}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

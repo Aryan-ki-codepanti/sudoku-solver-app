@@ -33,10 +33,11 @@ const ResultGrid = () => {
 
     return (
         <div className="result-grid container">
-            <button className="solve-btn" onClick={handleSolve}>
-                Solve
-            </button>
-
+            {grid && (
+                <button className="solve-btn" onClick={handleSolve}>
+                    Solve
+                </button>
+            )}
             {error && <p>You entered a puzzle which can not be solved</p>}
 
             <GridBox currentGrid={resultGrid} />

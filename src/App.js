@@ -1,17 +1,21 @@
+import { useContext } from "react";
 import "./App.css";
 import DimensionChoice from "./Components/DimensionChoice";
 import Header from "./Components/Header";
 import InputGrid from "./Components/InputGrid";
 import ResultGrid from "./Components/ResultGrid";
+import { GridContext } from "./Context/GridContext";
 
 function App() {
+    const { grid } = useContext(GridContext);
+
     return (
         <div className="App">
             <Header />
             <div className="Not-Header">
-                <DimensionChoice />
+                {!grid && <DimensionChoice />}
                 <div className="Lower">
-                    <InputGrid />
+                    {grid && <InputGrid />}
                     <ResultGrid />
                 </div>
             </div>

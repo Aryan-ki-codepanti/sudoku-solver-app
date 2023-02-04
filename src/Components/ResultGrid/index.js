@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { GridContext } from "../../Context/GridContext";
 import { isValidPuzzle, toIntegers } from "../../Utils/ArrayUtil";
 import { solve } from "../../Utils/solver";
+import ErrorMessage from "../ErrorMessage";
 import GridBox from "../GridBox";
 import "./resultGrid.css";
 
@@ -38,7 +39,11 @@ const ResultGrid = () => {
                     Solve
                 </button>
             )}
-            {error && <p>You entered a puzzle which can not be solved</p>}
+            {error && (
+                <ErrorMessage
+                    message={"You entered a puzzle which can not be solved"}
+                />
+            )}
             <div>
                 {resultGrid && <p>Here is the solution of entered puzzle</p>}
                 <GridBox currentGrid={resultGrid} />

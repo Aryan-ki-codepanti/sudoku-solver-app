@@ -1,0 +1,17 @@
+.error-message-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+.error-message-wrapper img {
+    width: 300px;
+    object-fit: cover;
+}
+.error-message-wrapper p {
+    padding-inline: 0.5em;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--Primary-gray);
+}

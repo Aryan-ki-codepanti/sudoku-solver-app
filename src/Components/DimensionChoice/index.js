@@ -16,15 +16,12 @@ const DimensionChoice = () => {
     const handleGeneration = e => {
         let dim = dimension;
         if (customChoice !== "") {
-            console.log("here 1 , custom choice  set", customChoice);
             setDimension(prev => customChoice);
             dim = customChoice;
         }
 
-        if (dim === "") {
-            console.log("here 2 , dimension not set");
-            return;
-        }
+        if (dim === "") return;
+
         const newArr = zeroArray(dim);
         setGrid(prev => newArr);
     };

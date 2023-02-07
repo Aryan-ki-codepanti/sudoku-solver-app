@@ -5,9 +5,7 @@ import GridBox from "../GridBox";
 
 const Transition = () => {
     const [counter, setCounter] = useState(0);
-    // const [currentGrid, setCurrentGrid] = useState(null);
-    const { solverIterations, setResultGrid, setSolverIterations } =
-        useContext(GridContext);
+    const { solverIterations } = useContext(GridContext);
 
     const intervalRef = useRef(null);
 
@@ -25,7 +23,6 @@ const Transition = () => {
 
     useEffect(() => {
         if (counter === solverIterations?.length) {
-            console.log("Counter done");
             clearInterval(intervalRef.current);
             setCounter(prev => prev - 1);
         }

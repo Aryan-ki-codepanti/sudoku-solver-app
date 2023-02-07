@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { GridContext } from "../../Context/GridContext";
-import { copyArray, zeroArray } from "../../Utils/ArrayUtil";
+import { copyArray } from "../../Utils/ArrayUtil";
 import "./inputGrid.css";
 import { COLORS, WIDTHS } from "../../Utils/Styles";
 
@@ -47,7 +47,6 @@ const InputGrid = () => {
         if (i + 1 === grid.length && j + 1 === grid.length)
             styles.borderRadius = "0 0 8px 0";
         if (i + 1 === grid.length && j === 0) styles.borderRadius = "0 0 0 8px";
-        console.log({ styles, i, j });
         return styles;
     };
 

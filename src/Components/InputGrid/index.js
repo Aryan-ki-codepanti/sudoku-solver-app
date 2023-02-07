@@ -5,11 +5,10 @@ import "./inputGrid.css";
 import { COLORS, WIDTHS } from "../../Utils/Styles";
 
 const InputGrid = () => {
-    const { grid, dimension, setGrid } = useContext(GridContext);
+    const { grid, dimension, setGrid, resultGrid } = useContext(GridContext);
 
     const handleInputNumBoxPuzzle = e => {
         let val = e.target.value;
-        if (val.length > 1) return;
 
         const [i, j] = e.target.id.split("-");
         const newArr = copyArray(grid);
@@ -74,6 +73,7 @@ const InputGrid = () => {
                                 className="numBox"
                                 value={grid[i][j]}
                                 onChange={handleInputNumBoxPuzzle}
+                                disabled={resultGrid}
                             />
                         ))}
                     </div>

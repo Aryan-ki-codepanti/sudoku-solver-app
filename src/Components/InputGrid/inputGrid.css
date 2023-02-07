@@ -35,8 +35,14 @@
     text-align: center;
 
     border: none;
+    background: #fff;
 }
 
 .numBox:focus {
     outline: none;
+}
+
+.numBox:disabled {
+    user-select: none;
+    pointer-events: none;
 }

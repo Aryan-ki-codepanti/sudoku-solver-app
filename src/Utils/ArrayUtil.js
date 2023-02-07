@@ -26,6 +26,7 @@ export const isValidPuzzle = (arr, dimension, n) => {
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < n; j++) {
             if (!arr[i][j]) continue;
+            if (arr[i][j] > n || arr[i][j] < 1) return false;
             if (!isValidBoxPuzzle(arr, i, j, dimension, n, arr[i][j]))
                 return false;
         }

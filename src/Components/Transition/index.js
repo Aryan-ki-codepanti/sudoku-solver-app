@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
+import "./transition.css";
 import { GridContext } from "../../Context/GridContext";
 import GridBox from "../GridBox";
 
@@ -31,9 +32,12 @@ const Transition = () => {
     }, [counter, solverIterations]);
 
     return (
-        <div className="container">
+        <div className="container transition-wrapper">
             {solverIterations?.length > 0 && (
-                <GridBox currentGrid={solverIterations[counter]} />
+                <>
+                    <p>Transitions of solution</p>
+                    <GridBox currentGrid={solverIterations[counter]} />
+                </>
             )}
         </div>
     );

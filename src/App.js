@@ -18,7 +18,7 @@ function App() {
                 <div className="Lower">
                     {grid && <InputGrid />}
                     <ResultGrid />
-                    {/* {resultGrid && <Transition />} */}
+                    {resultGrid && <Transition />}
                 </div>
             </div>
         </div>

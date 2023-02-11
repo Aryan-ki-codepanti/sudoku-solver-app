@@ -7,15 +7,21 @@ import GridBox from "../GridBox";
 import "./resultGrid.css";
 
 const ResultGrid = () => {
-    const { grid, dimension, resultGrid, setResultGrid, setSolverIterations } =
-        useContext(GridContext);
+    const {
+        grid,
+        setGrid,
+        dimension,
+        resultGrid,
+        setResultGrid,
+        setSolverIterations
+    } = useContext(GridContext);
 
     const [error, setError] = useState(false);
 
     const handleSolve = e => {
         const n = dimension * dimension;
         const numGrid = toIntegers(grid, dimension, n);
-
+        setGrid(prev => numGrid);
         if (!isValidPuzzle(numGrid, dimension, n)) {
             setError(prev => true);
             setResultGrid(prev => null);

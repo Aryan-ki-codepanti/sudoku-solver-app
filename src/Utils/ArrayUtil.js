@@ -39,7 +39,10 @@ export const toIntegers = (arr, dimension, n) => {
     const newArr = [];
     for (let i = 0; i < n; i++) {
         let inner = [];
-        for (let j = 0; j < n; j++) inner.push(Number.parseInt(arr[i][j]));
+        for (let j = 0; j < n; j++) {
+            if (arr[i][j] === "") inner.push(0);
+            else inner.push(Number.parseInt(arr[i][j]));
+        }
         newArr.push(inner);
     }
     return newArr;

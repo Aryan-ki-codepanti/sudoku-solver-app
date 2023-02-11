@@ -53,8 +53,9 @@ const InputGrid = () => {
     return (
         <div className="input-grid-wrapper container">
             <p>
-                To place a number in a square — type the number on your keyboard
-                after clicking on it
+                {resultGrid
+                    ? "Your input puzzle"
+                    : "To place a number in a square — type the number on your keyboard after clicking on it"}
             </p>
             <div
                 className="sudoku-box"
